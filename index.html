@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chinmay Pharmaceuticals - Trusted Healthcare</title>
+  <meta name="description" content="Chinmay Pharmaceuticals offers quality medicines including antibiotics, supplements, injectables, and ayurvedic solutions. Learn about our vision, products, career opportunities in Gujarat, and contact us." />
+  <meta name="keywords" content="Chinmay Pharmaceuticals, Pharma, Gujarat, Antibiotics, Supplements, PCD Company, Ayurvedic, Injectables, Healthcare India, Careers, Marketing Representative, Job, Vacancy" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f9fc;
+      color: #001f3f;
+      line-height: 1.6; /* Improve overall text readability */
+    }
+    header {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img {
+      height: 120px;
+      margin-right: 25px;
+    }
+    nav {
+      margin-left: auto;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #001f3f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #1f3c88;
+    }
+    .hero-section {
+      background: url('banner.jpg') no-repeat center center;
+      background-size: cover;
+      min-height: 40vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      /* Removed background and box-shadow */
+    }
+    .hero-content h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .section-title {
+      color: #1f3c88;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+    }
+    .product-category-heading {
+      color: #143166;
+      font-size: 1.8em;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #1f3c88;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    /* Products Section */
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+    .product-card {
+      background: #fdfdff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .product-card b {
+      font-size: 1.1em;
+      color: #001f3f;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .medicine-content {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    /* Vision & Mission Section */
+    .vision-mission-content {
+      text-align: justify;
+    }
+    .vision-mission-content p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 25px;
+    }
+    .vision-mission-content h3 {
+      color: #1f3c88;
+      font-size: 1.8em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    /* Careers Section */
+    #careers .career-info {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    #careers h3 {
+      color: #1f3c88;
+      font-size: 1.6em;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    #careers p strong {
+      color: #1f3c88;
+    }
+
+    /* Contact Us Section */
+    .contact-info p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .contact-info strong {
+      color: #1f3c88;
+    }
+
+    footer {
+      background-color: #1f3c88;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive Adjustments */
+    @media (min-width: 1200px) {
+        .product-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 1024px) {
+      .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+      }
+      header img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        height: 100px;
+      }
+      nav {
+        margin-left: 0;
+      }
+      .hero-section {
+        min-height: 30vh;
+        padding: 30px 15px;
+      }
+      .hero-content h2 {
+        font-size: 2em;
+      }
+      .section {
+        padding: 40px 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+      }
+      .product-category-heading {
+        font-size: 1.5em;
+      }
+      .product-list {
+        grid-template-columns: 1fr;
+      }
+      nav a {
+        margin: 5px 10px;
+        font-size: 0.9em;
+      }
+    }
+    @media (max-width: 480px) {
+      header img {
+        height: 80px;
+      }
+      .hero-content h2 {
+        font-size: 1.8em;
+      }
+      .section-title {
+        font-size: 1.8em;
+      }
+      .product-category-heading {
+        font-size: 1.3em;
+      }
+      nav a {
+        font-size: 0.8em;
+      }
+      .vision-mission-content {
+        text-align: left; /* Revert to left align for better readability on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-transparent.png" alt="Chinmay Logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#vision-mission">Vision & Mission</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <div id="home" class="hero-section">
+    <div class="hero-content">
+      <h2>Welcome to Chinmay Pharmaceuticals</h2>
+    </div>
+  </div>
+
+  <div id="products" class="section">
+    <h2 class="section-title">Explore Our Full Range of Products</h2>
+
+    <h3 class="product-category-heading">Antibiotics Tablets</h3>
+    <div class="product-list">
+      <div class="product-card"><b>CEFILYNE LB</b><div class="medicine-content">Cefixime 200mg + Lactic Acid 60 million Spores Tab.</div></div>
+      <div class="product-card"><b>CEFIAR PLUS</b><div class="medicine-content">Cefixime 200mg + Ofloxacin 200mg Tab.</div></div>
+      <div class="product-card"><b>OFLYNE-OZ</b><div class="medicine-content">Ornidazole 500 mg + Ofloxacin 200mg Tab.</div></div>
+      <div class="product-card"><b>LEVOLYNE-500</b><div class="medicine-content">Levofloxacin 500 mg Tab</div></div>
+      <div class="product-card"><b>LYNPOD-200</b><div class="medicine-content">Cefpodoxime 200 mg Tab</div></div>
+      <div class="product-card"><b>AZIRICH 500</b><div class="medicine-content">Azithromycin 500mg Tab</div></div>
+      <div class="product-card"><b>AMOXYLYNE-CV-625</b><div class="medicine-content">Amoxycilin 500mg + Clavulanate 125 mg Tab</div></div>
+      <div class="product-card"><b>AMOXYLYNE-CV-LB-625</b><div class="medicine-content">Amoxycilin 500mg + Clavulanate 125 mg + Lactic Acid 60 million spores Tab</div></div>
+      <div class="product-card"><b>AMOXYLYNE-CV-375</b><div class="medicine-content">Amoxycilin 250mg + Clavulanate 125 Tab</div></div>
+    </div>
+
+    <h3 class="product-category-heading">Syrup</h3>
+    <div class="product-list">
+      <div class="product-card"><b>AMOXYLYNE-CV-228.5</b><div class="medicine-content">Amoxycilin 200 mg + Clavulanate 28.5 mg Syp</div></div>
+      <div class="product-card"><b>AMOXYLYNE-CV-457</b><div class="medicine-content">Amoxycilin 400 mg + Clavulanate 57 mg Syp</div></div>
+      <div class="product-card"><b>LYNPOD CV 50</b><div class="medicine-content">Clavulanate Acid 31.25 mg + Cefpodoxime 50 mg Syp</div></div>
+    </div>
+
+    <h3 class="product-category-heading">Injection</h3>
+    <div class="product-list">
+      <div class="product-card"><b>CHINCEF 1GM</b><div class="medicine-content">Ceftriaxone 1 gm Inj.</div></div>
+      <div class="product-card"><b>PANTOLYNE</b><div class="medicine-content">Pantoprazole 40 mg Inj.</div></div>
+      <div class="product-card"><b>DCMAX-AQ</b><div class="medicine-content">Diclofenac Sodium 75 mg I.p. Inj.</div></div>
+      <div class="product-card"><b>CHINCEF-SB 1.5GM</b><div class="medicine-content">Ceftriaxone 1 gm + Sulbactum 500mg Inj.</div></div>
+    </div>
+
+    <h3 class="product-category-heading">Analgesic & Anti Inflammatory Tablets</h3>
+    <div class="product-list">
+      <div class="product-card"><b>ACELYNE-P</b><div class="medicine-content">Aceclofenac 100 mg + Paracetamol 325 mg Tab</div></div>
+      <div class="product-card"><b>ACELYNE-SP</b><div class="medicine-content">Aceclofenac 100 mg + Serratiopeptidase 15 mg + Paracetamol 325 mg Tab</div></div>
+      <div class="product-card"><b>NISIMAX-P</b><div class="medicine-content">Nimesulide 100 Mg & Paracetamol 325 Tab</div></div>
+      <div class="product-card"><b>CHYMOLYNE-FORTE</b><div class="medicine-content">Bromeline 90 mg + Rutoside 100 mg + Trypsin 48mg Tab</div></div>
+    </div>
+
+    <h3 class="product-category-heading">Analgesic & Antispasmodic & Antiemetic Tablets/Capsules / Syrup</h3>
+    <div class="product-list">
+      <div class="product-card"><b>PANTOLYNE-DSR</b><div class="medicine-content">Pantoprazole 40mg + Domperidone 30 mg Cap</div></div>
+      <div class="product-card"><b>MEF P DS</b><div class="medicine-content">Mefenamic Acid 100 mg + Paracetamol 250 mg Syp 60ml</div></div>
+      <div class="product-card"><b>PANTOLYNE-40</b><div class="medicine-content">Pantoprazole 40mg Tab</div></div>
+      <div class="product-card"><b>PANTOLYNE-D</b><div class="medicine-content">Pantoprazole 40mg + Domperidone 10 mg Cap</div></div>
+      <div class="product-card"><b>RABILYNE-DSR</b><div class="medicine-content">Rabeprazole 20 mg + Domperidone 30 mg Tab</div></div>
+      <div class="product-card"><b>RABILYNE</b><div class="medicine-content">Rabeprazole 20 mg Tab</div></div>
+      <div class="product-card"><b>DROTIMAX</b><div class="medicine-content">Drotaverine 80 mg + Mefenamic Acid 250 mg Tab</div></div>
+    </div>
+
+    <h3 class="product-category-heading">Nutritional Supplements Tablets/Syrup</h3>
+    <div class="product-list">
+      <div class="product-card"><b>FERILYNE</b><div class="medicine-content">Sodium Feredatate 231 mg + Folic Acid 1.5 + Vit. B12 15 mcg Tab</div></div>
+      <div class="product-card"><b>FERILYNE XT</b><div class="medicine-content">Ferrous Ascorbate + Folic Acid Syrup 200ml</div></div>
+      <div class="product-card"><b>MAXILYNE-D3</b><div class="medicine-content">Methylcobalamine 1500 mcg + Folic Acid 1.5 mg + Alpha Lipoic Acid 100mg + Pyridoxine 3 mg + Vit D3 1000iu Tab</div></div>
+      <div class="product-card"><b>MAXILYNE/MAXILYNE PLUS</b><div class="medicine-content">Lycopene + Multivitamins + Multiminerals Syrup 200 ml / 100 ml</div></div>
+    </div>
+
+    <h3 class="product-category-heading">Anti Allergic & Anti Cold & Anti Fungal Tablets/Syrup</h3>
+    <div class="product-list">
+      <div class="product-card"><b>LYCAST-LC</b><div class="medicine-content">Levocetirizine 5 mg + Montelukast 10 mg Tab</div></div>
+      <div class="product-card"><b>LC PLUS</b><div class="medicine-content">Levocetirizine 5 mg + Phenylephrine 5 mg + Paracetamol 500 mg</div></div>
+      <div class="product-card"><b>LEVOSAL-AM</b><div class="medicine-content">Ambroxol 30 mg + Guaphenesin 50 mg + Levosalbutamol 1 mg Syrup 100 ml/60 ml</div></div>
+      <div class="product-card"><b>LYCAST-LC (Kid)</b><div class="medicine-content">Levocetirizine 2.5 mg + Montelukast 4 mg Tab</div></div>
+      <div class="product-card"><b>TERBILYNE</b><div class="medicine-content">Terbutaline 1.25 mg + Ambroxol 15 mg + Guaphenesin 50 mg Syrup 100ml</div></div>
+      <div class="product-card"><b>LYCAST-LC (Syrup)</b><div class="medicine-content">Levocetirizine 2.5 mg + Montelukast 4 mg Syrup 60 ml</div></div>
+      <div class="product-card"><b>CHILLED PLUS</b><div class="medicine-content">Paracetamol 125 mg + Phenylephrine 2.5 mg + CPM 1 mg Syp 60ml</div></div>
+      <div class="product-card"><b>DEXTROLYNE</b><div class="medicine-content">Dextromethorphen 15 mg + Phenylephrine 5 mg + CPM 2 mg Syrup 100 ml</div></div>
+      <div class="product-card"><b>MAX-T</b><div class="medicine-content">Phenyleprin 5 + Cpm 2</div></div>
+      <div class="product-card"><b>CHILLED PLUS DS</b><div class="medicine-content">Paracetamol 125 mg + Phenylephrine 2.5 mg + CPM1 mg Syrup 60 ml</div></div>
+    </div>
+
+    <h3 class="product-category-heading">Enzyme & Urinary Infective Syrup</h3>
+    <div class="product-list">
+      <div class="product-card"><b>GASTROLYNE</b><div class="medicine-content">An Ayurvedic Enzyme Syrup 200ml</div></div>
+      <div class="product-card"><b>URITONE</b><div class="medicine-content">An Ayurvedic Stone & Urinary Infective Syrup 200ml</div></div>
+    </div>
+  </div>
+
+  <div id="vision-mission" class="section">
+    <h2 class="section-title">Our Vision & Mission</h2>
+    <div class="vision-mission-content">
+      <h3>Vision</h3>
+      <p>To be a leading and trusted pharmaceutical company known for innovation, quality, and commitment to healthcare. We aspire to make Chinmay Pharmaceuticals a household name across India and globally by consistently delivering quality products that improve lives.</p>
+      <h3>Mission</h3>
+      <p>Chinmay Pharmaceuticals was established in December 2015 as a PCD-based company with just 8 products. Today, we have grown to more than 40+ products recommended by renowned doctors across Gujarat. Our mission is to provide reliable, affordable, and effective medicines and to start our own manufacturing facility in the near future to ensure consistent quality and supply.</p>
+    </div>
+  </div>
+
+  <div id="careers" class="section">
+    <h2 class="section-title">Careers</h2>
+    <div class="career-info">
+      <h3>Marketing Representative Vacancies in Gujarat</h3>
+      <p>Chinmay Pharmaceuticals is currently seeking enthusiastic and driven Marketing Representatives to join our expanding team across Gujarat.</p>
+      <p>If you are a dynamic individual with a passion for the pharmaceutical industry and possess excellent communication and interpersonal skills, we encourage you to apply.</p>
+      <p>To learn more about these opportunities or to submit your resume, please contact us at <a href="mailto:info@chinmaypharmaceuticals.com"><strong>info@chinmaypharmaceuticals.com</strong></a>.</p>
+    </div>
+  </div>
+
+  <div id="contact" class="section">
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-info">
+      <p><strong>Address:</strong><br>
+        O-507 Maple Trade Center,<br>
+        Nr. Surdhara Circle,<br>
+        Satadhar Cross Road,<br>
+        Thaltej, Ahmedabad - 380060</p>
+      <p><strong>Email:</strong> info@chinmaypharmaceuticals.com</p>
+      <p><strong>Phone:</strong> 9099054526</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Chinmay Pharmaceuticals. All rights reserved.
+  </footer>
+</body>
+</html>
