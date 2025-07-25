@@ -6,10 +6,14 @@
   <title>Chinmay Pharmaceuticals - Trusted Healthcare</title>
   <meta name="description" content="Chinmay Pharmaceuticals offers quality medicines including antibiotics, supplements, injectables, and ayurvedic solutions. Learn about our vision, products, career opportunities in Gujarat, and contact us." />
   <meta name="keywords" content="Chinmay Pharmaceuticals, Pharma, Gujarat, Antibiotics, Supplements, PCD Company, Ayurvedic, Injectables, Healthcare India, Careers, Marketing Representative, Job, Vacancy" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts - Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif; /* Changed to Inter for consistency */
       background: #f6f9fc;
       color: #001f3f;
       line-height: 1.6; /* Improve overall text readability */
@@ -42,7 +46,7 @@
       color: #1f3c88;
     }
     .hero-section {
-      background: url('banner.jpg') no-repeat center center;
+      background: url('https://placehold.co/1200x400/001f3f/ffffff?text=Chinmay+Pharmaceuticals') no-repeat center center; /* Placeholder image */
       background-size: cover;
       min-height: 40vh;
       display: flex;
@@ -69,6 +73,25 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       margin-top: 40px;
       margin-bottom: 40px;
+      display: none; /* Hidden by default, shown by JS */
+    }
+    .section.active {
+        display: block; /* Show active section */
+    }
+    /* Special styling for the calculator section to center it */
+    #scheme-calculator {
+        display: none; /* Hidden by default */
+        background-color: #f3f4f6; /* Match body background */
+        box-shadow: none; /* No extra shadow for this section */
+        padding: 1rem; /* Adjust padding for full screen calculator */
+        margin: 0; /* Remove margin to allow full height centering */
+        min-height: calc(100vh - 140px); /* Adjust based on header/footer height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #scheme-calculator.active {
+        display: flex; /* Show active calculator section */
     }
     .section-title {
       color: #1f3c88;
@@ -171,6 +194,14 @@
       margin-top: 40px;
     }
 
+    /* Calculator specific styles */
+    input[type="number"]:focus,
+    input[type="text"]:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Blue focus ring */
+        border-color: #3b82f6; /* Blue border */
+    }
+
     /* Responsive Adjustments */
     @media (min-width: 1200px) {
         .product-list {
@@ -223,6 +254,9 @@
         margin: 5px 10px;
         font-size: 0.9em;
       }
+      #scheme-calculator {
+        min-height: calc(100vh - 120px); /* Adjust for smaller header */
+      }
     }
     @media (max-width: 480px) {
       header img {
@@ -248,22 +282,25 @@
 </head>
 <body>
   <header>
-    <img src="logo-transparent.png" alt="Chinmay Logo">
+    <img src="https://placehold.co/120x120/001f3f/ffffff?text=Logo" alt="Chinmay Logo"> <!-- Placeholder for logo -->
     <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#vision-mission">Vision & Mission</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact">Contact Us</a>
+      <a href="#home" class="nav-link" data-section="home">Home</a>
+      <a href="#products" class="nav-link" data-section="products">Products</a>
+      <a href="#vision-mission" class="nav-link" data-section="vision-mission">Vision & Mission</a>
+      <a href="#careers" class="nav-link" data-section="careers">Careers</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact Us</a>
+      <a href="#scheme-calculator" class="nav-link" data-section="scheme-calculator">Scheme Calculator</a>
     </nav>
   </header>
 
-  <div id="home" class="hero-section">
+  <!-- Hero Section -->
+  <div id="home" class="hero-section section active">
     <div class="hero-content">
       <h2>Welcome to Chinmay Pharmaceuticals</h2>
     </div>
   </div>
 
+  <!-- Products Section -->
   <div id="products" class="section">
     <h2 class="section-title">Explore Our Full Range of Products</h2>
 
@@ -343,6 +380,7 @@
     </div>
   </div>
 
+  <!-- Vision & Mission Section -->
   <div id="vision-mission" class="section">
     <h2 class="section-title">Our Vision & Mission</h2>
     <div class="vision-mission-content">
@@ -353,6 +391,7 @@
     </div>
   </div>
 
+  <!-- Careers Section -->
   <div id="careers" class="section">
     <h2 class="section-title">Careers</h2>
     <div class="career-info">
@@ -363,6 +402,7 @@
     </div>
   </div>
 
+  <!-- Contact Us Section -->
   <div id="contact" class="section">
     <h2 class="section-title">Let's Connect</h2>
     <div class="contact-info">
@@ -376,8 +416,183 @@
     </div>
   </div>
 
+  <!-- Scheme Calculator Section -->
+  <div id="scheme-calculator" class="section">
+    <div class="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full max-w-md border border-gray-200">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Scheme Calculator</h1>
+
+        <div class="space-y-4">
+            <!-- Input for Price to Retailer (PTR) -->
+            <div>
+                <label for="ptr" class="block text-sm font-medium text-gray-700 mb-1">Price to Retailer (PTR) (INR):</label>
+                <input type="number" id="ptr" placeholder="e.g., 27.14" min="0" step="0.01"
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-base">
+            </div>
+
+            <!-- Input for Total Order Quantity -->
+            <div>
+                <label for="totalQuantity" class="block text-sm font-medium text-gray-700 mb-1">Total Order Quantity (Strips):</label>
+                <input type="number" id="totalQuantity" placeholder="e.g., 30" min="1"
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-base">
+            </div>
+
+            <!-- Input for Target Rate -->
+            <div>
+                <label for="targetRate" class="block text-sm font-medium text-gray-700 mb-1">Target Rate (per Strip) (INR):</label>
+                <input type="number" id="targetRate" placeholder="e.g., 9.00" min="0" step="0.01"
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-base">
+            </div>
+        </div>
+
+        <button id="calculateBtn"
+                class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            Calculate Combinations
+        </button>
+
+        <div id="results" class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200 shadow-inner">
+            <h2 class="text-xl font-semibold text-blue-800 mb-4">Best Combinations:</h2>
+            <div id="combinationsOutput" class="space-y-4">
+                <!-- Combinations will be injected here by JavaScript -->
+                <p class="text-gray-600 text-center">Enter values and click 'Calculate Combinations' to see results.</p>
+            </div>
+            <p id="errorMessage" class="text-red-600 mt-4 hidden"></p>
+        </div>
+    </div>
+  </div>
+
   <footer>
     &copy; 2025 Chinmay Pharmaceuticals. All rights reserved.
   </footer>
+
+  <script>
+    // JavaScript for navigation
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+
+        function showSection(id) {
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            const activeSection = document.getElementById(id);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default anchor link behavior
+                const sectionId = link.getAttribute('data-section');
+                showSection(sectionId);
+
+                // Update URL hash without causing a page reload
+                history.pushState(null, '', link.getAttribute('href'));
+            });
+        });
+
+        // Show initial section based on URL hash or default to 'home'
+        const initialHash = window.location.hash.substring(1);
+        if (initialHash && document.getElementById(initialHash)) {
+            showSection(initialHash);
+        } else {
+            showSection('home');
+        }
+    });
+
+    // JavaScript for Scheme Calculator (copied from previous immersive)
+    // Get references to HTML elements
+    const ptrInput = document.getElementById('ptr');
+    const totalQuantityInput = document.getElementById('totalQuantity');
+    const targetRateInput = document.getElementById('targetRate');
+    const calculateBtn = document.getElementById('calculateBtn');
+    const combinationsOutput = document.getElementById('combinationsOutput');
+    const errorMessage = document.getElementById('errorMessage');
+
+    // Event listener for the Calculate button
+    calculateBtn.addEventListener('click', calculateCombinations);
+
+    function calculateCombinations() {
+        // Clear previous error messages and results
+        errorMessage.classList.add('hidden');
+        combinationsOutput.innerHTML = ''; // Clear previous combinations
+
+        // Get input values
+        const ptr = parseFloat(ptrInput.value);
+        const totalQuantity = parseInt(totalQuantityInput.value);
+        const targetRate = parseFloat(targetRateInput.value);
+
+        // Input validation
+        if (isNaN(ptr) || ptr <= 0) {
+            errorMessage.textContent = 'Please enter a valid positive number for PTR.';
+            errorMessage.classList.remove('hidden');
+            return;
+        }
+        if (isNaN(totalQuantity) || totalQuantity <= 0 || !Number.isInteger(totalQuantity)) {
+            errorMessage.textContent = 'Please enter a valid positive whole number for Total Order Quantity.';
+            errorMessage.classList.remove('hidden');
+            return;
+        }
+        if (isNaN(targetRate) || targetRate <= 0) {
+            errorMessage.textContent = 'Please enter a valid positive number for Target Rate.';
+            errorMessage.classList.remove('hidden');
+            return;
+        }
+        if (targetRate > ptr) {
+            errorMessage.textContent = 'Target Rate cannot be greater than PTR.';
+            errorMessage.classList.remove('hidden');
+            return;
+        }
+
+        const combinations = [];
+
+        // Iterate through all possible billed quantities from 0 to totalQuantity
+        for (let billedQuantity = 0; billedQuantity <= totalQuantity; billedQuantity++) {
+            const freeQuantity = totalQuantity - billedQuantity;
+            const totalBilledAmount = billedQuantity * ptr;
+            const effectiveRate = totalBilledAmount / totalQuantity;
+            const difference = Math.abs(effectiveRate - targetRate);
+
+            combinations.push({
+                billedQuantity: billedQuantity,
+                freeQuantity: freeQuantity,
+                totalBilledAmount: totalBilledAmount,
+                effectiveRate: effectiveRate,
+                difference: difference
+            });
+        }
+
+        // Sort combinations by their difference from the target rate (ascending)
+        combinations.sort((a, b) => a.difference - b.difference);
+
+        // Display the top 3 combinations
+        if (combinations.length === 0) {
+            combinationsOutput.innerHTML = '<p class="text-gray-600 text-center">No combinations found for the given inputs.</p>';
+            return;
+        }
+
+        const numCombinationsToDisplay = Math.min(3, combinations.length);
+
+        for (let i = 0; i < numCombinationsToDisplay; i++) {
+            const combo = combinations[i];
+            const comboDiv = document.createElement('div');
+            comboDiv.className = 'bg-white p-4 rounded-md shadow-sm border border-blue-100';
+            comboDiv.innerHTML = `
+                <p class="text-lg font-semibold text-blue-700 mb-2">Combination #${i + 1}</p>
+                <p class="text-gray-700">Billed Quantity: <span class="font-medium">${combo.billedQuantity}</span> strips</p>
+                <p class="text-gray-700">Free Quantity: <span class="font-medium">${combo.freeQuantity}</span> strips</p>
+                <p class="text-gray-700">Total Billed Amount: INR <span class="font-medium">${combo.totalBilledAmount.toFixed(2)}</span></p>
+                <p class="text-green-700">Effective Rate: INR <span class="font-semibold">${combo.effectiveRate.toFixed(3)}</span></p>
+                <p class="text-red-600 text-sm">Difference from Target: INR <span class="font-semibold">${combo.difference.toFixed(3)}</span></p>
+            `;
+            combinationsOutput.appendChild(comboDiv);
+        }
+    }
+
+    // Initial message for calculator
+    if (combinationsOutput) { // Check if element exists before setting innerHTML
+        combinationsOutput.innerHTML = '<p class="text-gray-600 text-center">Enter values and click \'Calculate Combinations\' to see results.</p>';
+    }
+  </script>
 </body>
 </html>
